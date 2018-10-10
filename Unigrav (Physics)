@@ -1,0 +1,42 @@
+﻿PROGRAM:UNIGRAV
+:6.67ᴇ-11→G
+:Menu("<<UNIGRAV v1.6>>","FORCE",F,"DISTANCE",D,"MASS SAME",MS,"MASS DIFFERENT",MD,"EXIT",X
+:Lbl F
+:Disp "F=(G×M1×M2)/D²","MASS 1?"
+:Prompt M:M→N
+:Disp "MASS 2?"
+:Prompt M
+:Disp "DISTANCE?"
+:Prompt D
+:(GMN)/(D²)→F
+:Disp "FORCE:",F
+:Stop
+:Lbl MS
+:Disp "M=√((D²F)/G)","DISTANCE?"
+:Prompt D
+:Disp "FORCE?"
+:Prompt F
+:√((D)²(F)/G)→M
+:Disp "MASS:",M
+:Stop
+:Lbl D
+:Disp "D=√((G×M1×M2)/F)","MASS 1?"
+:Prompt M:M→N
+:Disp "MASS 2?"
+:Prompt M
+:Disp "FORCE?"
+:Prompt F
+:√((GNM)/(F)→D
+:Disp "DISTANCE:",D
+:Stop
+:Lbl X:Stop
+:Lbl MD
+:Disp "M2=((D²F)/(GM)","DISTANCE?"
+:Prompt D
+:Disp "FORCE?"
+:Prompt F
+:Disp "KNOWN MASS?"
+:Prompt M:M→N
+:((D²)(F))/(GN)→M
+:Disp "UNKNOWN MASS:",M
+:Stop
