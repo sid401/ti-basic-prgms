@@ -1,0 +1,70 @@
+﻿PROGRAM:CURRENTS
+:Menu("CURRENTS v1.6","CURRENT",C,"RESISTANCE",R,"VOLTAGE",V,"POWER",P,"COST",S,"OTHER",O,"EXIT",X
+:Lbl X:Stop
+:Lbl GB:prgmCURRENTS:Stop
+:Lbl C
+:Menu("CURRENT","I=V/R",C1,"I=√(P/R)",C4,"BACK",GB
+:Lbl CD
+:Disp "CURRENT:",I:Stop
+:Lbl C1
+:Disp "I=V/R"
+:Prompt V,R
+:V/R→I:Goto CD
+:Lbl C4
+:Disp "I=√(P/R)"
+:Prompt P,R
+:√(P/R)→I
+:Goto CD
+:Lbl R
+:Menu("RESISTANCE","R=V/I",R1,"PARALLEL",RP,"BACK",GB
+:Lbl RD
+:Disp "RESISTANCE:",R:Stop
+:Lbl R1
+:Disp "R=V/I"
+:Prompt V,I
+:V/I→R:Goto RD
+:Lbl RP
+:Disp "1/RT=(1/R1)+(1/R2)"
+:℮→N:π→A
+:Input "R1=?",S
+:Input "R2=?",T
+:Input "R3=?",U
+:If U=N/A:Then
+:(S^(-1)+T^(-1))^(-1)→R
+:Goto RD:End
+:Lbl V
+:Disp "V=IR"
+:Prompt I,R
+:IR→V
+:Disp "VOLTAGE:",V:Stop
+:Lbl P
+:Menu("POWER","P=Q{WORK}/t",P2,"NO V",P3,"NO I",P4,"BACK",GB
+:LbL PD
+:Disp "POWER:",P:Stop
+:Lbl P2
+:Disp "P=Q{WORK}/t"
+:Input "Q{WORK}=?",Q
+:Input "t=?",T
+:Q/T→P:Goto PD
+:Lbl P3
+:Disp "P=I²R"
+:Prompt I,R
+:(I²)(R)→P
+:Goto PD
+:Lbl P4
+:Disp "P=V²/R"
+:Prompt V,R
+:(V²)(R)→P
+:Goto PD
+:Lbl O
+:Disp "t=Q{WORK}/P","Q=It","P=IV","V=Q/C"
+:Stop
+Lbl S
+:Disp "COST= S K W H"
+:Prompt S
+:Disp "K=?1000"
+:Prompt "W,H
+:W/1000→K
+:SKH→C
+:Disp "COST:",C
+:Stop
