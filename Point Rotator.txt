@@ -1,0 +1,10 @@
+PROGRAM:ROTATE
+:ClrHome
+:Disp "ORIGINAL POINT?"
+:Prompt X,Y
+:ClrHome
+:Disp "ORIG:","90°:","180°:","270°:"
+:Output(1,7,{X,Y}
+:Output(2,7,{-Y,X}
+:Output(3,7,{X,-Y}
+:Output(4,7,{Y,-X}
