@@ -1,0 +1,53 @@
+﻿PROGRAM:LINECALC
+:Menu("<<LINECALC v2.2>","DISTANCE",D,,"MIDPOINT",M,"2nd POINT",2,"3D DISTANCE",ZD,"3D MIDPOINT",ZM,"EXIT",X
+:Lbl X:Stop
+:Lbl D
+:Disp "DIST. FORMULA","√((x₂-x₁)²","      +(y₂-y₁)²)","FIRST POINT?"
+:Input "x₁=?",X
+:Input "y₁=?",Y
+:X→V:Y→W
+:Input "x₂=?",X
+:Input "y₂=?",Y
+:(X-V)²→T
+:(Y-W)²→U
+:√(T+U)→D
+:Disp "DISTANCE:",D
+:Stop
+:Lbl M
+:Disp "(x₁+x₂)/2","(y₁+y₂)/2"
+:Input "x₁=?",V
+:Input "y₁=?",W
+:Input "x₂=?",X
+:Input "y₂=?",Y
+:(X+V)/2→T
+:(Y+W)/2→U
+:Disp "MIDPOINT:",{T,U}
+:Stop
+:Lbl 2
+:Disp "MIDPOINT?":Prompt X,Y
+:X→V:Y→W
+:Disp "KNOWN POINT?":Prompt X,Y
+:2V-X→T:2W-Y→U
+:Disp "UNKNOWN POINT:",{T,U}
+:Stop
+:Lbl ZM
+:Disp "3D MIDPOINT","FIRST POINT?"
+:Prompt X,Y,Z
+:X→U:Y→V:Z→W
+:Disp "SECOND POINT?"
+:Prompt X,Y,Z
+:(U+X)/2→R
+:(V+Y)/2→S
+:(W+Z)/2→T
+:Disp "MIDPOINT:",{R,S,T}:Stop
+:Lbl ZD
+:Disp "3D DISTANCE","FIRST POINT?"
+:Prompt X,Y,Z
+:X→U:Y→V:Z→W
+:Disp "SECOND POINT?"
+:Prompt X,Y,Z
+:(X-U)²→R
+:(Y-V)²→S
+:(Z-W)²→T
+:√(R+S+T)→D
+:Disp "DISTANCE:",D:Stop
